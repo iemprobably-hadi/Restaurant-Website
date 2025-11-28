@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Spot Kitchen - Careers</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="../static/images/logo.png" alt="Hot Spot Kitchen Logo">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="careers.html" class="active">Careers</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Join Our Team</h1>
+            <p>Be a part of the Hot Spot family</p>
+        </div>
+    </header>
+
+    <!-- Why Join Us -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Work With Us?</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in-scroll">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Competitive Pay</h3>
+                    <p>We offer competitive salaries and tips, rewarding hard work and dedication.</p>
+                </div>
+                <div class="benefit-card fade-in-scroll">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Growth Opportunities</h3>
+                    <p>We believe in promoting from within and offer training programs for career advancement.</p>
+                </div>
+                <div class="benefit-card fade-in-scroll">
+                    <div class="benefit-icon">🍲</div>
+                    <h3>Free Meals</h3>
+                    <p>Enjoy delicious free meals during your shifts and discounts for your family.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Openings -->
+    <section class="section-padding bg-cream">
+        <div class="container">
+            <div class="section-header">
+                <h2>Current Openings</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="jobs-list">
+                <div class="job-card fade-in-scroll">
+                    <div class="job-header">
+                        <div>
+                            <h3>Line Cook</h3>
+                            <p class="job-type">Full-time / Part-time</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="scrollToForm('Line Cook')">Apply Now</button>
+                    </div>
+                    <p>We are looking for an experienced Line Cook to prepare delicious meals according to our menu. You
+                        will cook dishes that will delight our customers with their taste and timely delivery.</p>
+                </div>
+                <div class="job-card fade-in-scroll">
+                    <div class="job-header">
+                        <div>
+                            <h3>Server / Waitstaff</h3>
+                            <p class="job-type">Part-time</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="scrollToForm('Server')">Apply Now</button>
+                    </div>
+                    <p>We are looking for a competent Server to take and deliver orders. You'll be the face of our
+                        restaurant and responsible for our customers' experiences.</p>
+                </div>
+                <div class="job-card fade-in-scroll">
+                    <div class="job-header">
+                        <div>
+                            <h3>Delivery Driver</h3>
+                            <p class="job-type">Full-time</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="scrollToForm('Delivery Driver')">Apply Now</button>
+                    </div>
+                    <p>We are looking for a responsible Delivery Driver to distribute products promptly to our
+                        customers. You will represent our company in a professional and cost-effective manner.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="section-padding" id="application-form">
+        <div class="container">
+            <div class="section-header">
+                <h2>Apply Now</h2>
+                <div class="divider"></div>
+                <p>Fill out the form below to start your journey with us</p>
+            </div>
+            <div class="form-container">
+                <form id="careerForm" action="/submit-career" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="position">Position Applied For</label>
+                            <select id="position" name="position" required>
+                                <option value="" disabled selected>Select a position</option>
+                                <option value="Line Cook">Line Cook</option>
+                                <option value="Server">Server</option>
+                                <option value="Delivery Driver">Delivery Driver</option>
+                                <option value="Kitchen Helper">Kitchen Helper</option>
+                                <option value="Manager">Manager</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="availability">Availability</label>
+                            <select id="availability" name="availability" required>
+                                <option value="Full-time">Full-time</option>
+                                <option value="Part-time">Part-time</option>
+                                <option value="Weekends">Weekends Only</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Why do you want to join us?</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Hot Spot Kitchen</h4>
+                    <p>Bringing warmth and flavor to every meal since 2024.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>📍 123 Kitchen Street, Food City</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>✉️ info@hotspotkitchen.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Friday: 11am - 10pm</p>
+                    <p>Saturday - Sunday: 10am - 11pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hot Spot Kitchen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/js/script.js"></script>
+    <script>
+        function scrollToForm(position) {
+            const select = document.getElementById('position');
+            select.value = position;
+            document.getElementById('application-form').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

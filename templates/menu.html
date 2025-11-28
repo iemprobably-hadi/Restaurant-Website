@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Spot Kitchen - Menu</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="../static/images/logo.png" alt="Hot Spot Kitchen Logo">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="cart-icon" id="cartIcon">
+                        🛒 <span class="cart-count">0</span>
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p>Discover a world of flavors</p>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu-section section-padding">
+        <div class="container">
+            <!-- Filters -->
+            <div class="menu-filters fade-in">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="starters">Starters</button>
+                <button class="filter-btn" data-category="main">Main Course</button>
+                <button class="filter-btn" data-category="desi">Desi Delights</button>
+                <button class="filter-btn" data-category="fastfood">Fast Food</button>
+                <button class="filter-btn" data-category="desserts">Desserts</button>
+                <button class="filter-btn" data-category="drinks">Drinks</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid">
+                <!-- Starters -->
+                <div class="menu-card fade-in-scroll" data-category="starters">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/wings.jpg" alt="Chicken Wings"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Chicken+Wings'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Spicy Chicken Wings</h3>
+                        <p>Crispy wings tossed in our signature hot sauce.</p>
+                        <div class="menu-footer">
+                            <span class="price">$8.99</span>
+                            <button class="btn-add" onclick="addToCart('Spicy Chicken Wings', 8.99)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="starters">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/garlic-bread.jpg" alt="Garlic Bread"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Garlic+Bread'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Cheesy Garlic Bread</h3>
+                        <p>Toasted baguette topped with mozzarella and herbs.</p>
+                        <div class="menu-footer">
+                            <span class="price">$5.99</span>
+                            <button class="btn-add" onclick="addToCart('Cheesy Garlic Bread', 5.99)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="starters">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/rolls.jpg" alt="Spring Rolls"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Spring+Rolls'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Vegetable Spring Rolls</h3>
+                        <p>Crispy rolls filled with fresh vegetables.</p>
+                        <div class="menu-footer">
+                            <span class="price">$6.50</span>
+                            <button class="btn-add" onclick="addToCart('Vegetable Spring Rolls', 6.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="starters">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/soup.jpg" alt="Soup"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Soup'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Hot & Sour Soup</h3>
+                        <p>A classic spicy and tangy soup with chicken.</p>
+                        <div class="menu-footer">
+                            <span class="price">$7.00</span>
+                            <button class="btn-add" onclick="addToCart('Hot & Sour Soup', 7.00)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="starters">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/salad.jpg" alt="Salad"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Salad'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Caesar Salad</h3>
+                        <p>Fresh romaine lettuce with croutons and parmesan.</p>
+                        <div class="menu-footer">
+                            <span class="price">$9.50</span>
+                            <button class="btn-add" onclick="addToCart('Caesar Salad', 9.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Course -->
+                <div class="menu-card fade-in-scroll" data-category="main">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/steak.jpg" alt="Steak"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Steak'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Grilled Ribeye Steak</h3>
+                        <p>Juicy ribeye served with mashed potatoes.</p>
+                        <div class="menu-footer">
+                            <span class="price">$24.99</span>
+                            <button class="btn-add" onclick="addToCart('Grilled Ribeye Steak', 24.99)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="main">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/alfredo.jpg" alt="Pasta"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Pasta'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Fettuccine Alfredo</h3>
+                        <p>Creamy white sauce pasta with grilled chicken.</p>
+                        <div class="menu-footer">
+                            <span class="price">$16.50</span>
+                            <button class="btn-add" onclick="addToCart('Fettuccine Alfredo', 16.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="main">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/beef-lasagna.jpg" alt="Lasagna"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Lasagna'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Beef Lasagna</h3>
+                        <p>Layers of pasta, meat sauce, and cheese.</p>
+                        <div class="menu-footer">
+                            <span class="price">$18.00</span>
+                            <button class="btn-add" onclick="addToCart('Beef Lasagna', 18.00)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="main">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/chips-n-fries.jpg" alt="Fish"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Fish+and+Chips'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Fish and Chips</h3>
+                        <p>Crispy battered fish with golden fries.</p>
+                        <div class="menu-footer">
+                            <span class="price">$15.99</span>
+                            <button class="btn-add" onclick="addToCart('Fish and Chips', 15.99)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="main">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/lemon-chicken.jpg" alt="Chicken"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Grilled+Chicken'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Lemon Herb Chicken</h3>
+                        <p>Grilled chicken breast with lemon herb sauce.</p>
+                        <div class="menu-footer">
+                            <span class="price">$17.50</span>
+                            <button class="btn-add" onclick="addToCart('Lemon Herb Chicken', 17.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desi Delights -->
+                <div class="menu-card fade-in-scroll" data-category="desi">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/special-biryani.jpg" alt="Biryani"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Biryani'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Chicken Biryani</h3>
+                        <p>Aromatic basmati rice with spicy chicken.</p>
+                        <div class="menu-footer">
+                            <span class="price">$12.99</span>
+                            <button class="btn-add" onclick="addToCart('Chicken Biryani', 12.99)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="desi">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/chicken-karahi.jpg" alt="Karahi"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Karahi'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Chicken Karahi</h3>
+                        <p>Traditional spicy chicken curry cooked in a wok.</p>
+                        <div class="menu-footer">
+                            <span class="price">$14.50</span>
+                            <button class="btn-add" onclick="addToCart('Chicken Karahi', 14.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="desi">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/beef-nihari.jpg" alt="Nihari"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Nihari'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Beef Nihari</h3>
+                        <p>Slow-cooked beef stew with rich spices.</p>
+                        <div class="menu-footer">
+                            <span class="price">$15.99</span>
+                            <button class="btn-add" onclick="addToCart('Beef Nihari', 15.99)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="desi">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/seekh-kebabs.jpg" alt="Kebab"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Kebab'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Seekh Kebabs</h3>
+                        <p>Grilled minced meat skewers with spices.</p>
+                        <div class="menu-footer">
+                            <span class="price">$11.50</span>
+                            <button class="btn-add" onclick="addToCart('Seekh Kebabs', 11.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="desi">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/cheesy-garlicnaan.jpg" alt="Naan"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Naan'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Garlic Naan</h3>
+                        <p>Freshly baked flatbread with garlic butter.</p>
+                        <div class="menu-footer">
+                            <span class="price">$2.50</span>
+                            <button class="btn-add" onclick="addToCart('Garlic Naan', 2.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fast Food -->
+                <div class="menu-card fade-in-scroll" data-category="fastfood">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/classic-cheesyburger.jpg" alt="Burger"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Burger'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Classic Cheeseburger</h3>
+                        <p>Beef patty with cheddar, lettuce, and tomato.</p>
+                        <div class="menu-footer">
+                            <span class="price">$10.99</span>
+                            <button class="btn-add" onclick="addToCart('Classic Cheeseburger', 10.99)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="fastfood">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/zinger-burger.jpg" alt="Zinger"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Zinger'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Zinger Burger</h3>
+                        <p>Crispy fried chicken fillet with spicy mayo.</p>
+                        <div class="menu-footer">
+                            <span class="price">$11.50</span>
+                            <button class="btn-add" onclick="addToCart('Zinger Burger', 11.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="fastfood">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/pepporoni-pizza.jpg" alt="Pizza"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Pizza'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Pepperoni Pizza</h3>
+                        <p>Classic pizza with mozzarella and pepperoni.</p>
+                        <div class="menu-footer">
+                            <span class="price">$13.99</span>
+                            <button class="btn-add" onclick="addToCart('Pepperoni Pizza', 13.99)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="fastfood">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/NY-sandwich.jpg" alt="Sandwich"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Sandwich'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Club Sandwich</h3>
+                        <p>Triple-decker sandwich with chicken and egg.</p>
+                        <div class="menu-footer">
+                            <span class="price">$9.99</span>
+                            <button class="btn-add" onclick="addToCart('Club Sandwich', 9.99)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="fastfood">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/loaded-fries.jpg" alt="Fries"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Fries'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Loaded Fries</h3>
+                        <p>Fries topped with cheese sauce and jalapenos.</p>
+                        <div class="menu-footer">
+                            <span class="price">$6.99</span>
+                            <button class="btn-add" onclick="addToCart('Loaded Fries', 6.99)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-card fade-in-scroll" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/chocolate-brownie.jpg" alt="Brownie"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Brownie'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Chocolate Brownie</h3>
+                        <p>Warm fudge brownie served with vanilla ice cream.</p>
+                        <div class="menu-footer">
+                            <span class="price">$6.50</span>
+                            <button class="btn-add" onclick="addToCart('Chocolate Brownie', 6.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/NY-cheesecake.jpg" alt="Cheesecake"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Cheesecake'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>New York Cheesecake</h3>
+                        <p>Classic creamy cheesecake with strawberry topping.</p>
+                        <div class="menu-footer">
+                            <span class="price">$7.50</span>
+                            <button class="btn-add" onclick="addToCart('New York Cheesecake', 7.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/gulab-jamun.jpg" alt="Gulab Jamun"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Gulab+Jamun'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Gulab Jamun</h3>
+                        <p>Traditional milk solids dumplings in sugar syrup.</p>
+                        <div class="menu-footer">
+                            <span class="price">$5.00</span>
+                            <button class="btn-add" onclick="addToCart('Gulab Jamun', 5.00)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/chocolate-sundae.jpg" alt="Ice Cream"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Ice+Cream'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Sundae Delight</h3>
+                        <p>Three scoops of ice cream with nuts and sauce.</p>
+                        <div class="menu-footer">
+                            <span class="price">$6.99</span>
+                            <button class="btn-add" onclick="addToCart('Sundae Delight', 6.99)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/rice-kheer.jpg" alt="Kheer"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Kheer'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Rice Kheer</h3>
+                        <p>Creamy rice pudding with cardamom and nuts.</p>
+                        <div class="menu-footer">
+                            <span class="price">$5.50</span>
+                            <button class="btn-add" onclick="addToCart('Rice Kheer', 5.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks -->
+                <div class="menu-card fade-in-scroll" data-category="drinks">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/softdrinks.jpg" alt="Soft Drink"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Soft+Drink'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Soft Drinks</h3>
+                        <p>Coke, Sprite, Fanta, or Pepsi.</p>
+                        <div class="menu-footer">
+                            <span class="price">$2.00</span>
+                            <button class="btn-add" onclick="addToCart('Soft Drink', 2.00)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="drinks">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/chocolate-milkshake.jpg" alt="Milkshake"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Milkshake'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Chocolate Milkshake</h3>
+                        <p>Thick and creamy chocolate shake.</p>
+                        <div class="menu-footer">
+                            <span class="price">$5.50</span>
+                            <button class="btn-add" onclick="addToCart('Chocolate Milkshake', 5.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="drinks">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/sweet-lassi.jpg" alt="Lassi"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Lassi'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Sweet Lassi</h3>
+                        <p>Traditional yogurt drink, sweet and refreshing.</p>
+                        <div class="menu-footer">
+                            <span class="price">$4.00</span>
+                            <button class="btn-add" onclick="addToCart('Sweet Lassi', 4.00)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="drinks">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/masala-chai.jpg" alt="Tea"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Tea'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Masala Chai</h3>
+                        <p>Spiced milk tea.</p>
+                        <div class="menu-footer">
+                            <span class="price">$2.50</span>
+                            <button class="btn-add" onclick="addToCart('Masala Chai', 2.50)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in-scroll" data-category="drinks">
+                    <div class="menu-image">
+                        <img src="../static/images/menu/mineral-water.jpg" alt="Water"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Water'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>Mineral Water</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Hot Spot Kitchen</h4>
+                    <p>Bringing warmth and flavor to every meal since 2024.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>📍 123 Kitchen Street, Food City</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>✉️ info@hotspotkitchen.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Friday: 11am - 10pm</p>
+                    <p>Saturday - Sunday: 10am - 11pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hot Spot Kitchen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Item Customization Modal -->
+    <div id="modalOverlay" class="modal-overlay"></div>
+    <div id="itemModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalItemName">Item Name</h2>
+                <span id="modalItemPrice" class="modal-price">$0.00</span>
+            </div>
+
+            <div class="modal-body">
+                <div class="custom-section">
+                    <h3>Add Sides (+$2.50 each)</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="side" value="Fries" data-price="2.50"> French Fries</label>
+                        <label><input type="checkbox" name="side" value="Onion Rings" data-price="2.50"> Onion
+                            Rings</label>
+                        <label><input type="checkbox" name="side" value="Coleslaw" data-price="2.50"> Coleslaw</label>
+                        <label><input type="checkbox" name="side" value="Garlic Bread" data-price="2.50"> Garlic
+                            Bread</label>
+                    </div>
+                </div>
+
+                <div class="custom-section">
+                    <h3>Add Drink</h3>
+                    <div class="radio-group">
+                        <label><input type="radio" name="drink" value="None" data-price="0" checked> No Drink</label>
+                        <label><input type="radio" name="drink" value="Coke" data-price="1.50"> Coke (+$1.50)</label>
+                        <label><input type="radio" name="drink" value="Sprite" data-price="1.50"> Sprite
+                            (+$1.50)</label>
+                        <label><input type="radio" name="drink" value="Water" data-price="1.00"> Water (+$1.00)</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="qty-selector">
+                    <button id="modalQtyMinus">-</button>
+                    <span id="modalQty">1</span>
+                    <button id="modalQtyPlus">+</button>
+                </div>
+                <div class="total-price-section">
+                    <span>Total: </span>
+                    <span id="modalTotalPrice">$0.00</span>
+                    <span class="close-cart" id="closeCart">&times;</span>
+                </div>
+                <div class="cart-items" id="cartItems">
+                    <!-- Items will be added here by JS -->
+                    <p class="empty-cart-msg">Your cart is empty.</p>
+                </div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span id="cartTotal">$0.00</span>
+                    </div>
+                    <button id="checkoutBtn" class="btn btn-primary btn-block">Checkout</button>
+                </div>
+            </div>
+
+            <script src="../static/js/script.js"></script>
+
+</body>
+
+</html>

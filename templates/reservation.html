@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Spot Kitchen - Reservation</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="../static/images/logo.png" alt="Hot Spot Kitchen Logo">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="reservation.html" class="active">Reservation</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Book A Table</h1>
+            <p>Reserve your spot for an unforgettable dining experience</p>
+        </div>
+    </header>
+
+    <!-- Reservation Form -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="form-container fade-in-scroll">
+                <form id="reservationForm" action="/submit-reservation" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="resFirstName">First Name</label>
+                            <input type="text" id="resFirstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="resLastName">Last Name</label>
+                            <input type="text" id="resLastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="resEmail">Email</label>
+                            <input type="email" id="resEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="resPhone">Phone</label>
+                            <input type="tel" id="resPhone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="resDate">Date</label>
+                            <input type="date" id="resDate" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="resTime">Time</label>
+                            <select id="resTime" name="time" required>
+                                <option value="" disabled selected>Select Time</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="resGuests">Number of Guests</label>
+                        <select id="resGuests" name="guests" required>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6 People</option>
+                            <option value="7+">7+ People</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="occasion">Occasion (Optional)</label>
+                        <select id="occasion" name="occasion">
+                            <option value="None">None</option>
+                            <option value="Birthday">Birthday</option>
+                            <option value="Anniversary">Anniversary</option>
+                            <option value="Date">Date Night</option>
+                            <option value="Business">Business Meal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialRequest">Special Requests (Optional)</label>
+                        <textarea id="specialRequest" name="specialRequest" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Reservation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Hot Spot Kitchen</h4>
+                    <p>Bringing warmth and flavor to every meal since 2024.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>📍 123 Kitchen Street, Food City</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>✉️ info@hotspotkitchen.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <p>Monday - Friday: 11am - 10pm</p>
+                    <p>Saturday - Sunday: 10am - 11pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hot Spot Kitchen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>
