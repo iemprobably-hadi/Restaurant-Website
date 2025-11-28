@@ -376,7 +376,7 @@ ul {
 .page-header {
     height: 350px;
     background: linear-gradient(rgba(61, 40, 23, 0.6), rgba(61, 40, 23, 0.6)),
-        url('../images/page-header-bg.jpg') center/cover no-repeat;
+        url('images/page-header-bg.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
