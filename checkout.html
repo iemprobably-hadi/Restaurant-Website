@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hot Spot Kitchen - Checkout</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
         rel="stylesheet">
@@ -17,15 +17,15 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="/static/images/logo.png" alt="Hot Spot Kitchen Logo">
+                    <img src="static/images/logo.png" alt="Hot Spot Kitchen Logo">
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/menu">Menu</a></li>
-                    <li><a href="/delivery">Delivery</a></li>
-                    <li><a href="/careers">Careers</a></li>
-                    <li><a href="/reservation">Reservation</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -45,49 +45,67 @@
     </header>
 
     <!-- Checkout Section -->
-    <section class="section-padding">
+    <section class="checkout-section section-padding">
         <div class="container">
             <div class="checkout-grid">
-                <!-- Order Details -->
-                <div class="checkout-form-container fade-in-scroll">
-                    <div class="order-type-toggle">
-                        <button class="toggle-btn active" id="deliveryBtn"
-                            onclick="setOrderType('delivery')">Delivery</button>
-                        <button class="toggle-btn" id="pickupBtn" onclick="setOrderType('pickup')">Pickup</button>
-                    </div>
+                <!-- Checkout Form -->
+                <div class="checkout-form-container">
+                    <form id="checkoutForm">
+                        <!-- Order Type Toggle -->
+                        <div class="order-type-toggle">
+                            <button type="button" class="toggle-btn active" id="deliveryBtn">Delivery</button>
+                            <button type="button" class="toggle-btn" id="pickupBtn">Pickup</button>
+                        </div>
 
-                    <form id="checkoutForm" onsubmit="handleCheckout(event)">
-                        <h3>Contact Information</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
+                        <!-- Delivery Fields -->
+                        <div id="deliveryFields">
+                            <h3>Delivery Details</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" name="fullName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
                                 <input type="tel" id="phone" name="phone" required>
                             </div>
-                        </div>
-
-                        <div id="deliveryFields">
-                            <h3>Delivery Address</h3>
                             <div class="form-group">
-                                <label for="address">Street Address</label>
-                                <input type="text" id="address" name="address">
+                                <label for="address">Delivery Address</label>
+                                <textarea id="address" name="address" rows="3" required></textarea>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="city">City</label>
-                                    <input type="text" id="city" name="city">
+                                    <select id="city" name="city">
+                                        <option value="islamabad">Islamabad</option>
+                                        <option value="rawalpindi">Rawalpindi</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="zip">Zip Code</label>
-                                    <input type="text" id="zip" name="zip">
+                                    <label for="area">Area</label>
+                                    <input type="text" id="area" name="area" required>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Pickup Fields (Hidden by default) -->
                         <div id="pickupFields" style="display: none;">
+                            <h3>Pickup Details</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pickupName">Full Name</label>
+                                    <input type="text" id="pickupName" name="pickupName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pickupPhone">Phone Number</label>
+                                    <input type="tel" id="pickupPhone" name="pickupPhone">
+                                </div>
+                            </div>
                             <h3>Pickup Time</h3>
                             <div class="form-group">
                                 <label for="pickupTime">Preferred Time</label>
@@ -100,38 +118,105 @@
                         </div>
 
                         <h3>Payment Method</h3>
-                        <div class="payment-options">
-                            <label class="payment-option">
-                                <input type="radio" name="payment" value="cash" checked>
-                                <span>Cash on Delivery/Pickup</span>
+                        <div class="payment-grid">
+                            <label class="payment-card">
+                                <input type="radio" name="payment" value="card">
+                                <div class="payment-content">
+                                    <span class="payment-icon">💳</span>
+                                    <span>Credit/Debit Card</span>
+                                    <div class="card-logos">
+                                        <span class="card-logo">VISA</span>
+                                        <span class="card-logo">MC</span>
+                                    </div>
+                                </div>
                             </label>
-                            <!-- No online payment integration as requested -->
+                            <label class="payment-card">
+                                <input type="radio" name="payment" value="easypaisa">
+                                <div class="payment-content">
+                                    <img src="static/images/easypaisa.jpg" alt="EasyPaisa" class="payment-icon-img">
+                                    <span>EasyPaisa</span>
+                                </div>
+                            </label>
+                            <label class="payment-card">
+                                <input type="radio" name="payment" value="jazzcash">
+                                <div class="payment-content">
+                                    <img src="static/images/jazzcash.jpg" alt="JazzCash" class="payment-icon-img">
+                                    <span>JazzCash</span>
+                                </div>
+                            </label>
+                            <label class="payment-card">
+                                <input type="radio" name="payment" value="cod" checked>
+                                <div class="payment-content">
+                                    <span class="payment-icon">💵</span>
+                                    <span>Cash on Delivery</span>
+                                </div>
+                            </label>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">Place
+                        <!-- Payment Details (Hidden by default) -->
+                        <div id="paymentDetails" class="payment-details-container">
+                            <!-- Card Details -->
+                            <div id="cardDetails" style="display: none;">
+                                <h4>Card Details</h4>
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="cardExpiry">Expiry Date</label>
+                                        <input type="text" id="cardExpiry" placeholder="MM/YY">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cardCVC">CVC</label>
+                                        <input type="text" id="cardCVC" placeholder="123">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardName">Cardholder Name</label>
+                                    <input type="text" id="cardName" placeholder="John Doe">
+                                </div>
+                            </div>
+
+                            <!-- Wallet Details -->
+                            <div id="walletDetails" style="display: none;">
+                                <h4 id="walletTitle">Wallet Details</h4>
+                                <div class="form-group">
+                                    <label for="walletNumber">Account Number</label>
+                                    <input type="tel" id="walletNumber" placeholder="0300 1234567">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 30px;">
+                            <label for="notes">Order Notes (Optional)</label>
+                            <textarea id="notes" name="notes" rows="2"
+                                placeholder="Any special instructions?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Place
                             Order</button>
                     </form>
                 </div>
 
                 <!-- Order Summary -->
-                <div class="order-summary fade-in-scroll">
+                <div class="order-summary">
                     <h3>Order Summary</h3>
                     <div id="checkoutItems">
-                        <!-- Items injected via JS -->
+                        <!-- Items will be populated by JS -->
                     </div>
-                    <div class="summary-totals">
-                        <div class="summary-row">
-                            <span>Subtotal</span>
-                            <span id="checkoutSubtotal">$0.00</span>
-                        </div>
-                        <div class="summary-row" id="deliveryFeeRow">
-                            <span>Delivery Fee</span>
-                            <span id="checkoutDeliveryFee">$2.00</span>
-                        </div>
-                        <div class="summary-row total">
-                            <span>Total</span>
-                            <span id="checkoutTotal">$0.00</span>
-                        </div>
+
+                    <div class="summary-row" style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+                        <span>Subtotal</span>
+                        <span id="checkoutSubtotal">PKR 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Delivery Fee</span>
+                        <span id="checkoutDeliveryFee">PKR 200</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="checkoutTotal">PKR 0</span>
                     </div>
                 </div>
             </div>
@@ -144,15 +229,15 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>Hot Spot Kitchen</h4>
-                    <p>Bringing warmth and flavor to every meal since 2024.</p>
+                    <p>Bringing warmth and flavor to every meal since 2025.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/menu">Menu</a></li>
-                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="careers.html">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -173,49 +258,7 @@
         </div>
     </footer>
 
-    <script src="/static/js/script.js"></script>
-    <script>
-        // Checkout specific logic
-        let orderType = 'delivery';
-
-        function setOrderType(type) {
-            orderType = type;
-            document.getElementById('deliveryBtn').classList.toggle('active', type === 'delivery');
-            document.getElementById('pickupBtn').classList.toggle('active', type === 'pickup');
-
-            const deliveryFields = document.getElementById('deliveryFields');
-            const pickupFields = document.getElementById('pickupFields');
-            const deliveryFeeRow = document.getElementById('deliveryFeeRow');
-
-            if (type === 'delivery') {
-                deliveryFields.style.display = 'block';
-                pickupFields.style.display = 'none';
-                deliveryFeeRow.style.display = 'flex';
-                document.getElementById('address').required = true;
-                document.getElementById('city').required = true;
-            } else {
-                deliveryFields.style.display = 'none';
-                pickupFields.style.display = 'block';
-                deliveryFeeRow.style.display = 'none';
-                document.getElementById('address').required = false;
-                document.getElementById('city').required = false;
-            }
-
-            updateCheckoutTotal();
-        }
-
-        function handleCheckout(e) {
-            e.preventDefault();
-            alert('Order placed successfully! We will contact you shortly to confirm.');
-            localStorage.removeItem('cart'); // Clear cart
-            window.location.href = '/';
-        }
-
-        // Initialize checkout
-        document.addEventListener('DOMContentLoaded', () => {
-            renderCheckoutItems();
-        });
-    </script>
+    <script src="static/js/script.js"></script>
 </body>
 
 </html>
