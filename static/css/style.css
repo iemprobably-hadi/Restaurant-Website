@@ -189,7 +189,7 @@ ul {
     justify-content: center;
 }
 
-/* ===== BUTTONS ===== */
+/* ===== BUTTONS & RIPPLE ===== */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -198,6 +198,8 @@ ul {
     transition: all 0.3s ease;
     cursor: pointer;
     border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary {
@@ -213,7 +215,6 @@ ul {
 
 .btn-secondary {
     background-color: var(--olive-green);
-    /* Restored Green */
     color: var(--white);
 }
 
@@ -234,7 +235,22 @@ ul {
     color: var(--white);
 }
 
-/* Pulse Animation for Book a Table */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
 @keyframes pulse-green {
     0% {
         box-shadow: 0 0 0 0 rgba(107, 122, 62, 0.7);
@@ -912,7 +928,6 @@ ul {
     margin-bottom: 8px;
 }
 
-/* UPDATED: Better Input Styles */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -920,11 +935,9 @@ ul {
     padding: 12px 15px;
     border: 2px solid #eee;
     border-radius: 10px;
-    /* More rounded */
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     background-color: #f9f9f9;
-    /* Subtle background */
     transition: all 0.3s ease;
 }
 
@@ -935,7 +948,6 @@ ul {
     border-color: var(--olive-green);
     background-color: #fff;
     box-shadow: 0 0 0 4px rgba(107, 122, 62, 0.1);
-    /* Focus shadow */
 }
 
 .form-group textarea {
@@ -1181,10 +1193,8 @@ form button[type="submit"] {
 .cart-icon:hover {
     transform: scale(1.1);
     animation: shake 0.5s ease;
-    /* Added Shake Animation on Hover */
 }
 
-/* Cart Shake Animation */
 @keyframes shake {
     0% {
         transform: rotate(0deg);
@@ -1311,7 +1321,6 @@ form button[type="submit"] {
     gap: 12px;
 }
 
-/* Modern Quantity Selector (Consistent) */
 .qty-btn {
     background-color: #f0f0f0;
     border: none;
@@ -1385,7 +1394,7 @@ form button[type="submit"] {
     justify-content: center;
 }
 
-/* ===== CUSTOMIZATION MODAL STYLES ===== */
+/* ===== CUSTOMIZATION MODAL ===== */
 .customize-content {
     max-width: 500px;
     padding: 30px;
@@ -1414,7 +1423,6 @@ form button[type="submit"] {
     margin-bottom: 20px;
 }
 
-/* Quantity Selector (Consistent) */
 .qty-selector {
     display: flex;
     align-items: center;
@@ -1586,11 +1594,9 @@ form button[type="submit"] {
     gap: 10px;
 }
 
-/* UPDATED: Consistent Height for Icon Area */
 .payment-icon {
     font-size: 2rem;
     height: 40px;
-    /* Fixed height to match images */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1604,7 +1610,6 @@ form button[type="submit"] {
     object-fit: contain;
     margin-bottom: 10px;
     border-radius: 8px;
-    /* Rounded corners for app icons */
 }
 
 /* ===== ORDER TYPE TOGGLE ===== */
@@ -1631,7 +1636,6 @@ form button[type="submit"] {
     color: #888;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-family: 'Playfair Display', serif;
-    /* Interesting font */
     letter-spacing: 1px;
     position: relative;
     z-index: 1;
@@ -1681,7 +1685,6 @@ form button[type="submit"] {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 100px;
-    /* Sticky sidebar */
     border: 1px solid #eee;
 }
 
@@ -1731,12 +1734,11 @@ form button[type="submit"] {
     .order-summary {
         position: static;
         order: -1;
-        /* Show summary first on mobile */
         margin-bottom: 30px;
     }
 }
 
-/* ===== MODAL STYLES (Restored) ===== */
+/* ===== MODAL ===== */
 .modal {
     display: none;
     position: fixed;
@@ -1793,7 +1795,7 @@ form button[type="submit"] {
     cursor: pointer;
 }
 
-/* ===== TOAST NOTIFICATION ===== */
+/* ===== TOAST ===== */
 .toast {
     visibility: hidden;
     min-width: 250px;
